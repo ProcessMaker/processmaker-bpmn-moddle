@@ -1,0 +1,25 @@
+{
+  "name": "ProcessMaker",
+  "uri": "https://bpm4.processmaker.local/definitions/ProcessMaker.xsd",
+  "prefix": "pm",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "associations": [],
+  "types": [
+    {
+      "name": "Task",
+      "extends": [
+        "bpmn:Task"
+      ],
+      "properties": [
+        {
+          "name": "formRef",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "emumerations": [ ]
+}
