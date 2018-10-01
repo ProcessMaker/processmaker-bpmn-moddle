@@ -1,6 +1,6 @@
 {
   "name": "ProcessMaker",
-  "uri": "https://bpm4.processmaker.local/definitions/ProcessMaker.xsd",
+  "uri": "http://processmaker.com/BPMN/2.0/Schema.xsd",
   "prefix": "pm",
   "xml": {
     "tagAlias": "lowerCase"

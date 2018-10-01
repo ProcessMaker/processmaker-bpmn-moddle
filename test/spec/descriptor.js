@@ -11,7 +11,7 @@ describe('descriptor', function() {
     // then
     expect(processmakerDescriptor).to.exist;
 
-    expect(processmakerDescriptor.uri).to.eql('https://bpm4.processmaker.local/definitions/ProcessMaker.xsd');
+    expect(processmakerDescriptor.uri).to.eql('http://processmaker.com/BPMN/2.0/Schema.xsd');
     expect(processmakerDescriptor.prefix).to.eql('pm');
   });
 

@@ -1,5 +1,5 @@
 <task xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-      xmlns:pm="https://bpm4.processmaker.local/definitions/ProcessMaker.xsd"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
       completionQuantity="1"
       id="approve"
       isForCompensation="false"
