@@ -1,5 +1,5 @@
 {
-  "name": "processmaker-bpmn-moddle",
+  "name": "@processmaker/processmaker-bpmn-moddle",
   "version": "0.1.0",
   "description": "ProcessMaker moddle extensions for BPMN 2.0",
   "scripts": {
