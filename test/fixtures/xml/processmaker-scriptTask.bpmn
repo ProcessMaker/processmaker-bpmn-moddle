@@ -2,11 +2,11 @@
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
              xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
              targetNamespace="test">
-    <process id="FormTest">
+    <process id="ScriptTest">
         <startEvent id="start" />
-        <sequenceFlow sourceRef="start" targetRef="usertask" />
-        <userTask id="usertask" name="Task" pm:formRef="form-reference-id" />
-        <sequenceFlow sourceRef="usertask" targetRef="task2" />
+        <sequenceFlow sourceRef="start" targetRef="scripttask" />
+        <scriptTask id="scripttask" name="Script Task" pm:scriptRef="script-reference-id" />
+        <sequenceFlow sourceRef="scripttask" targetRef="task2" />
         <userTask id="task2" />
     </process>
 </definitions>

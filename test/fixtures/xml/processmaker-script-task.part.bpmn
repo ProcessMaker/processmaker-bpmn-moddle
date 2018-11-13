@@ -1,0 +1,7 @@
+<scriptTask xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="script"
+      name="Script Task"
+      pm:scriptRef="script-id"
+      pm:scriptVersion="10"
+      pm:config="{}" />

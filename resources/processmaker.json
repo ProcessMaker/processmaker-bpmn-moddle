@@ -17,6 +17,85 @@
           "name": "screenRef",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "screenVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "dueIn",
+          "isAttr": true,
+          "type": "Integer"
+        },
+        {
+          "name": "notifyAfterRouting",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "notifyRequestCreator",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ScriptTask",
+      "extends": [
+        "bpmn:ScriptTask"
+      ],
+      "properties": [
+        {
+          "name": "scriptRef",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "scriptVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ServiceTask",
+      "extends": [
+        "bpmn:ServiceTask"
+      ],
+      "properties": [
+        {
+          "name": "implementationVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "extends": [
+        "bpmn:Message"
+      ],
+      "properties": [
+        {
+          "name": "payload",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     }
