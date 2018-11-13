@@ -1,0 +1,7 @@
+<serviceTask xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="service"
+      name="Service Task"
+      implementation="EchoConnector"
+      pm:implementationVersion="10"
+      pm:config="{}" />

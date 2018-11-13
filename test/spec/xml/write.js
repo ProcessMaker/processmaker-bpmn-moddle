@@ -1,7 +1,7 @@
 'use strict';
 
 var assign = require('min-dash').assign,
-    isFunction = require('min-dash').isFunction;
+  isFunction = require('min-dash').isFunction;
 
 var Helper = require('../../helper');
 
@@ -18,26 +18,27 @@ describe('write', function() {
     }
 
     // skip preamble for tests
-    options = assign({ preamble: false }, options);
+    options = assign({preamble: false}, options);
 
     moddle.toXML(element, options, callback);
   }
 
 
-  describe('should export processmaker types', function() {
+  describe('should export processmaker extensions', function() {
 
-    it('Form reference', function(done) {
+
+    it('Write Message', function(done) {
 
       // given
-      var fieldElem = moddle.create('bpmn:Task', {
-        name: 'Task_1',
-        screenRef: 'form-001-000'
+      var fieldElem = moddle.create('bpmn:Message', {
+        'name': 'Message_1',
+        'payload': '{purchase}',
       });
 
       var expectedXML =
-        '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+        '<bpmn:message xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
         'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-        'name="Task_1" pm:screenRef="form-001-000" />';
+        'name="Message_1" pm:payload="{purchase}" />';
 
       // when
       write(fieldElem, function(err, result) {
@@ -49,6 +50,85 @@ describe('write', function() {
       });
     });
 
+    it('Write Script Task', function(done) {
+
+      // given
+      var fieldElem = moddle.create('bpmn:ScriptTask', {
+        'name': 'ScriptTask_1',
+        'scriptRef': 'form-001-000',
+        'scriptVersion': '10',
+      });
+
+      var expectedXML =
+        '<bpmn:scriptTask xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+        'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+        'name="ScriptTask_1" pm:scriptRef="form-001-000" ' +
+        'pm:scriptVersion="10" />';
+
+      // when
+      write(fieldElem, function(err, result) {
+
+        // then
+        expect(result).to.eql(expectedXML);
+
+        done(err);
+      });
+    });
+
+    it('Write Service Task', function(done) {
+
+      // given
+      var fieldElem = moddle.create('bpmn:ServiceTask', {
+        'name': 'ServiceTask_1',
+        'implementation': 'EchoConnector',
+        'implementationVersion': '10',
+        'config': '{"message":"hello"}',
+      });
+
+      var expectedXML =
+        '<bpmn:serviceTask xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+        'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+        'name="ServiceTask_1" implementation="EchoConnector" pm:implementationVersion="10" ' +
+        'pm:config="{&#34;message&#34;:&#34;hello&#34;}" />';
+
+      // when
+      write(fieldElem, function(err, result) {
+
+        // then
+        expect(result).to.eql(expectedXML);
+
+        done(err);
+      });
+    });
+
+    it('Write Task', function(done) {
+
+      // given
+      var fieldElem = moddle.create('bpmn:Task', {
+        'name': 'Task_1',
+        'screenRef': 'form-001-000',
+        'screenVersion': '10',
+        'dueIn': 3,
+        'notifyAfterRouting': true,
+        'notifyRequestCreator': false
+      });
+
+      var expectedXML =
+        '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+        'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+        'name="Task_1" pm:screenRef="form-001-000" ' +
+        'pm:screenVersion="10" pm:dueIn="3" ' +
+        'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" />';
+
+      // when
+      write(fieldElem, function(err, result) {
+
+        // then
+        expect(result).to.eql(expectedXML);
+
+        done(err);
+      });
+    });
 
   });
 

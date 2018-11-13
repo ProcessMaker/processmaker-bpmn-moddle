@@ -44,9 +44,15 @@ describe('import -> export roundtrip', function() {
   }
 
 
-  describe('should keep camunda attributes', function() {
+  describe('should keep extended attributes', function() {
 
-    it('pm:screenRef', validateExport('test/fixtures/xml/processmaker-userTask-form.bpmn'));
+    it('pm:screenRef & pm:screenVersion', validateExport('test/fixtures/xml/processmaker-userTask-screen.bpmn'));
+
+    it('pm:notifyAfterRouting & pm:notifyRequestCreator', validateExport('test/fixtures/xml/processmaker-userTask-notifications.bpmn'));
+
+    it('pm:assignment', validateExport('test/fixtures/xml/processmaker-userTask-assignment.bpmn'));
+
+    it('pm:scriptRef & pm:scriptVersion', validateExport('test/fixtures/xml/processmaker-scriptTask.bpmn'));
 
   });
 

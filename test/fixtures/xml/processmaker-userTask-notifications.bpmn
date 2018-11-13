@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="FormTest">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="usertask" />
+        <userTask id="usertask" name="Task" pm:screenRef="form-reference-id" pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" />
+        <sequenceFlow sourceRef="usertask" targetRef="task2" />
+        <userTask id="task2" />
+    </process>
+</definitions>

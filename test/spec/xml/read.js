@@ -2,7 +2,7 @@
 
 
 var readFile = require('../../helper').readFile,
-    createModdle = require('../../helper').createModdle;
+  createModdle = require('../../helper').createModdle;
 
 
 describe('read', function() {
@@ -15,22 +15,83 @@ describe('read', function() {
       moddle = createModdle();
     });
 
-    it('Processmaker task form', function(done) {
+    it('Load Message', function(done) {
+
+      // given
+      var xml = readFile('test/fixtures/xml/processmaker-message.part.bpmn');
+
+      // when
+      moddle.fromXML(xml, 'bpmn:Message', function(err, task) {
+        // then
+        expect(task).to.jsonEqual({
+          '$type': 'bpmn:Message',
+          'id': 'order',
+          'name': 'Order',
+          'payload': '{order}'
+        });
+        done(err);
+      });
+    });
+
+    it('Load Script Task', function(done) {
+
+      // given
+      var xml = readFile('test/fixtures/xml/processmaker-script-task.part.bpmn');
+
+      // when
+      moddle.fromXML(xml, 'bpmn:ScriptTask', function(err, task) {
+        // then
+        expect(task).to.jsonEqual({
+          '$type': 'bpmn:ScriptTask',
+          'id': 'script',
+          'name': 'Script Task',
+          'scriptRef': 'script-id',
+          'scriptVersion': '10',
+          'config': '{}',
+        });
+        done(err);
+      });
+    });
+
+    it('Load Service Task', function(done) {
+
+      // given
+      var xml = readFile('test/fixtures/xml/processmaker-service-task.part.bpmn');
+
+      // when
+      moddle.fromXML(xml, 'bpmn:ServiceTask', function(err, task) {
+        // then
+        expect(task).to.jsonEqual({
+          '$type': 'bpmn:ServiceTask',
+          'id': 'service',
+          'name': 'Service Task',
+          'implementation': 'EchoConnector',
+          'implementationVersion': '10',
+          'config': '{}',
+        });
+        done(err);
+      });
+    });
+
+    it('Load Task', function(done) {
 
       // given
       var xml = readFile('test/fixtures/xml/processmaker-task-form.part.bpmn');
 
       // when
       moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
-
         // then
         expect(task).to.jsonEqual({
-          $type: 'bpmn:Task',
+          '$type': 'bpmn:Task',
           'completionQuantity': 1,
           'id': 'approve',
           'isForCompensation': false,
           'name': 'Request approval',
           'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
+          'screenVersion': '10',
+          'dueIn': 10,
+          'notifyAfterRouting': true,
+          'notifyRequestCreator': false,
           'startQuantity': 1
         });
         done(err);
