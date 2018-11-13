@@ -76,7 +76,7 @@ describe('read', function() {
     it('Load Task', function(done) {
 
       // given
-      var xml = readFile('test/fixtures/xml/processmaker-task-form.part.bpmn');
+      var xml = readFile('test/fixtures/xml/processmaker-task-screen.part.bpmn');
 
       // when
       moddle.fromXML(xml, 'bpmn:Task', function(err, task) {

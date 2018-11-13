@@ -55,14 +55,14 @@ describe('write', function() {
       // given
       var fieldElem = moddle.create('bpmn:ScriptTask', {
         'name': 'ScriptTask_1',
-        'scriptRef': 'form-001-000',
+        'scriptRef': 'screen-001-000',
         'scriptVersion': '10',
       });
 
       var expectedXML =
         '<bpmn:scriptTask xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
         'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-        'name="ScriptTask_1" pm:scriptRef="form-001-000" ' +
+        'name="ScriptTask_1" pm:scriptRef="screen-001-000" ' +
         'pm:scriptVersion="10" />';
 
       // when
@@ -106,7 +106,7 @@ describe('write', function() {
       // given
       var fieldElem = moddle.create('bpmn:Task', {
         'name': 'Task_1',
-        'screenRef': 'form-001-000',
+        'screenRef': 'screen-001-000',
         'screenVersion': '10',
         'dueIn': 3,
         'notifyAfterRouting': true,
@@ -116,7 +116,7 @@ describe('write', function() {
       var expectedXML =
         '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
         'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-        'name="Task_1" pm:screenRef="form-001-000" ' +
+        'name="Task_1" pm:screenRef="screen-001-000" ' +
         'pm:screenVersion="10" pm:dueIn="3" ' +
         'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" />';
 
