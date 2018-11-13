@@ -31,13 +31,13 @@ describe('write', function() {
       // given
       var fieldElem = moddle.create('bpmn:Task', {
         name: 'Task_1',
-        formRef: 'form-001-000'
+        screenRef: 'form-001-000'
       });
 
       var expectedXML =
         '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
         'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-        'name="Task_1" pm:formRef="form-001-000" />';
+        'name="Task_1" pm:screenRef="form-001-000" />';
 
       // when
       write(fieldElem, function(err, result) {

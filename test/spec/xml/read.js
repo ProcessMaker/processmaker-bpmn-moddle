@@ -30,7 +30,7 @@ describe('read', function() {
           'id': 'approve',
           'isForCompensation': false,
           'name': 'Request approval',
-          'formRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
+          'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
           'startQuantity': 1
         });
         done(err);

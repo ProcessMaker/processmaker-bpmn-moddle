@@ -46,7 +46,7 @@ describe('import -> export roundtrip', function() {
 
   describe('should keep camunda attributes', function() {
 
-    it('pm:formRef', validateExport('test/fixtures/xml/processmaker-userTask-form.bpmn'));
+    it('pm:screenRef', validateExport('test/fixtures/xml/processmaker-userTask-form.bpmn'));
 
   });
 

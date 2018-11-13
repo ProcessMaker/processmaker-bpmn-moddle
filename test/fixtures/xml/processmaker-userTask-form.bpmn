@@ -5,7 +5,7 @@
     <process id="FormTest">
         <startEvent id="start" />
         <sequenceFlow sourceRef="start" targetRef="usertask" />
-        <userTask id="usertask" name="Task" pm:formRef="form-reference-id" />
+        <userTask id="usertask" name="Task" pm:screenRef="form-reference-id" />
         <sequenceFlow sourceRef="usertask" targetRef="task2" />
         <userTask id="task2" />
     </process>
