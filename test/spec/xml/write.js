@@ -130,6 +130,32 @@ describe('write', function() {
             });
         });
 
+
+        it('Write EndEvent', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:EndEvent', {
+                'name': 'EndEvent_1',
+                'screenRef': 'screen-001-000',
+                'screenVersion': '10',
+            });
+
+            var expectedXML =
+                '<bpmn:endEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+                'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+                'name="EndEvent_1" pm:screenRef="screen-001-000" ' +
+                'pm:screenVersion="10" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
     });
 
 });

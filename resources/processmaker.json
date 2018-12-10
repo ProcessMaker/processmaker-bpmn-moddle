@@ -109,6 +109,11 @@
           "name": "screenRef",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "screenVersion",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     }
