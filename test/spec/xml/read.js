@@ -98,6 +98,26 @@ describe('read', function() {
             });
         });
 
+        it('Load End Event', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-endEvent-screen.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:EndEvent', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:EndEvent',
+                    'id': 'endEvent',
+                    'name': 'End Event',
+                    'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
+                    'screenVersion': '10'
+                });
+                done(err);
+            });
+        });
+
+
     });
 
 });

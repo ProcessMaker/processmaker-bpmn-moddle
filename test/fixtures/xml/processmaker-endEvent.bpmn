@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="EndEvent">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="task2" />
+        <userTask id="task2" />
+        <sequenceFlow sourceRef="task2" targetRef="end" />
+        <endEvent id="end" pm:screenRef="screen-reference-id" pm:screenVersion="5" />
+    </process>
+</definitions>
