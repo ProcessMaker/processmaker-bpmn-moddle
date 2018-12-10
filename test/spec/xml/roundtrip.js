@@ -54,7 +54,7 @@ describe('import -> export roundtrip', function() {
 
         it('pm:scriptRef & pm:scriptVersion', validateExport('test/fixtures/xml/processmaker-scriptTask.bpmn'));
 
-        it('pm:scriptRef & pm:scriptVersion', validateExport('test/fixtures/xml/processmaker-endEvent.bpmn'));
+        it('EndEvent pm:screenRef & pm:screenVersion', validateExport('test/fixtures/xml/processmaker-endEvent.bpmn'));
     });
 
 });
