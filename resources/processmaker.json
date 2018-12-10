@@ -98,6 +98,19 @@
           "type": "String"
         }
       ]
+    },
+    {
+      "name": "EndEvent",
+      "extends": [
+        "bpmn:EndEvent"
+      ],
+      "properties": [
+        {
+          "name": "screenRef",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
     }
   ],
   "emumerations": [ ]
