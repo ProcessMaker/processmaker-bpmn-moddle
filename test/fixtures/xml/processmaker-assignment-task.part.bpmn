@@ -1,0 +1,6 @@
+<task xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="user_task"
+      name="User Task"
+      pm:assignment="cyclical"
+      pm:assignedUsers="1" />

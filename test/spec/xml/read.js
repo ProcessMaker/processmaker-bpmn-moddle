@@ -2,7 +2,7 @@
 
 
 var readFile = require('../../helper').readFile,
-    createModdle = require('../../helper').createModdle;
+  createModdle = require('../../helper').createModdle;
 
 
 describe('read', function() {
@@ -48,6 +48,25 @@ describe('read', function() {
                     'scriptRef': 'script-id',
                     'scriptVersion': '10',
                     'config': '{}',
+                });
+                done(err);
+            });
+        });
+
+        it('Load Assignment Task', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-assignment-task.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    id: 'user_task',
+                    name: 'User Task',
+                    assignment: 'cyclical',
+                    assignedUsers: '1',
                 });
                 done(err);
             });

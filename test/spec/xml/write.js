@@ -110,7 +110,9 @@ describe('write', function() {
                 'screenVersion': '10',
                 'dueIn': 3,
                 'notifyAfterRouting': true,
-                'notifyRequestCreator': false
+                'notifyRequestCreator': false,
+                'assignment': 'user',
+                'assignedUsers': '1',
             });
 
             var expectedXML =
@@ -118,7 +120,8 @@ describe('write', function() {
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="10" pm:dueIn="3" ' +
-              'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" />';
+              'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
+              'pm:assignment="user" pm:assignedUsers="1" />';
 
             // when
             write(fieldElem, function(err, result) {

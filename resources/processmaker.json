@@ -42,6 +42,11 @@
           "name": "assignment",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "assignedUsers",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
