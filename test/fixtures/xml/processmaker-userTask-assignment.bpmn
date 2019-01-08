@@ -7,6 +7,6 @@
         <sequenceFlow sourceRef="start" targetRef="usertask" />
         <userTask id="usertask" name="Task" pm:screenRef="screen-reference-id-1" pm:assignment="requestor" />
         <sequenceFlow sourceRef="usertask" targetRef="task2" />
-        <userTask id="task2" name="Task 2" pm:screenRef="screen-reference-id-2" pm:assignment="cyclical" pm:assignedUsers="1" />
+        <userTask id="task2" name="Task 2" pm:screenRef="screen-reference-id-2" pm:assignment="group" pm:assignedUsers="1" />
     </process>
 </definitions>

@@ -47,6 +47,11 @@
           "name": "assignedUsers",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "assignedGroups",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },

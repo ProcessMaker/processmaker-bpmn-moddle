@@ -63,10 +63,10 @@ describe('read', function() {
                 // then
                 expect(task).to.jsonEqual({
                     '$type': 'bpmn:Task',
-                    id: 'user_task',
-                    name: 'User Task',
-                    assignment: 'cyclical',
-                    assignedUsers: '1',
+                    id: 'group_task',
+                    name: 'Group Task',
+                    assignment: 'group',
+                    assignedGroups: '1',
                 });
                 done(err);
             });

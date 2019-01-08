@@ -171,6 +171,7 @@ describe('write', function() {
                 'notifyRequestCreator': false,
                 'assignment': 'group',
                 'assignedUsers': '10,20',
+                'assignedGroups': '999',
             });
 
             var expectedXML =
@@ -179,7 +180,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="1" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="group" pm:assignedUsers="10,20" />';
+              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" />';
 
             // when
             write(fieldElem, function(err, result) {
