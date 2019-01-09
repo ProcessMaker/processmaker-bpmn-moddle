@@ -1,0 +1,7 @@
+<task xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="task"
+      name="Task"
+      pm:assignment="group"
+      pm:assignedGroups="99"
+      pm:allowReassignment="true" />

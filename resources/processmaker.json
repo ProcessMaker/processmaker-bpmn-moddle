@@ -52,6 +52,11 @@
           "name": "assignedGroups",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "allowReassignment",
+          "isAttr": true,
+          "type": "Boolean"
         }
       ]
     },
