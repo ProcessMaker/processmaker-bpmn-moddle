@@ -205,7 +205,7 @@ describe('write', function() {
                 'assignment': 'group',
                 'assignedUsers': '10,20',
                 'assignedGroups': '999',
-                'allowReassignment=': true,
+                'allowReassignment': true,
             });
 
             var expectedXML =

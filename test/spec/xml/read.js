@@ -158,7 +158,7 @@ describe('read', function() {
         it('Load pm:allowReassginment attribute', function(done) {
 
             // given
-            var xml = readFile('test/fixtures/xml/processmaker-task-reasignment.part.bpmn');
+            var xml = readFile('test/fixtures/xml/processmaker-task-reassignment.part.bpmn');
 
             // when
             moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
