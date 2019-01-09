@@ -57,6 +57,8 @@ describe('import -> export roundtrip', function() {
         it('EndEvent pm:screenRef & pm:screenVersion', validateExport('test/fixtures/xml/processmaker-endEvent.bpmn'));
 
         it('Task group assignment', validateExport('test/fixtures/xml/processmaker-group-assignment.bpmn'));
+
+        it('Task group assignment', validateExport('test/fixtures/xml/processmaker-task-reassignment.bpmn'));
     });
 
 });

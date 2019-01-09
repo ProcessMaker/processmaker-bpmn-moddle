@@ -155,6 +155,26 @@ describe('read', function() {
             });
         });
 
+        it('Load pm:allowReassginment attribute', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-task-reasignment.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    id: 'task',
+                    name: 'Task',
+                    assignment: 'group',
+                    assignedGroups: '99',
+                    allowReassignment: true,
+                });
+                done(err);
+            });
+        });
+
     });
 
 });
