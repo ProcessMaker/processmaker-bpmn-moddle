@@ -57,6 +57,11 @@
           "name": "allowReassignment",
           "isAttr": true,
           "type": "Boolean"
+        },
+        {
+          "name": "assignedByExpression",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
