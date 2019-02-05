@@ -168,7 +168,7 @@ describe('read', function() {
                     id: 'task',
                     name: 'Task',
                     assignment: 'group',
-                    assignedByExpression: 'Age == 20'
+                    assignmentRules: 'Age == 20'
                 });
                 done(err);
             });

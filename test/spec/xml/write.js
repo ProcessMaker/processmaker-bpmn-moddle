@@ -206,7 +206,7 @@ describe('write', function() {
                 'assignment': 'group',
                 'assignedUsers': '10,20',
                 'assignedGroups': '999',
-                'assignedByExpression': 'Age == 20',
+                'assignmentRules': 'Age == 20',
             });
 
             var expectedXML =
@@ -216,7 +216,7 @@ describe('write', function() {
                 'pm:screenVersion="1" pm:dueIn="3" ' +
                 'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
                 'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" ' +
-                'pm:assignedByExpression="Age == 20" />';
+                'pm:assignmentRules="Age == 20" />';
 
             // when
             write(fieldElem, function(err, result) {

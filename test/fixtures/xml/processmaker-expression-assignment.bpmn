@@ -8,6 +8,6 @@
         <userTask id="usertask" name="Task" pm:screenRef="screen-reference-id-1" pm:assignment="requestor" />
         <sequenceFlow sourceRef="usertask" targetRef="task2" />
         <userTask id="task2" name="Task 2" pm:screenRef="screen-reference-id-2" pm:assignment="group"
-                  pm:assignedByExpression="Age == 20" />
+                  pm:assignmentRules="Age == 20" />
     </process>
 </definitions>

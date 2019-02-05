@@ -59,7 +59,7 @@
           "type": "Boolean"
         },
         {
-          "name": "assignedByExpression",
+          "name": "assignmentRules",
           "isAttr": true,
           "type": "String"
         }

@@ -3,4 +3,4 @@
       id="task"
       name="Task"
       pm:assignment="group"
-      pm:assignedByExpression="Age == 20" />
+      pm:assignmentRules="Age == 20" />
