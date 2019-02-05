@@ -168,7 +168,7 @@ describe('read', function() {
                     id: 'task',
                     name: 'Task',
                     assignment: 'group',
-                    assignmentRules: 'Age == 20'
+                    assignmentRules: '[{&#34;type&#34;:&#34;user&#34;,&#34;assignee&#34;:2,&#34;expression&#34;:&#34;Edad &#62; 10&#34;}]'
                 });
                 done(err);
             });
