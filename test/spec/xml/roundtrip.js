@@ -58,6 +58,8 @@ describe('import -> export roundtrip', function() {
 
         it('Task group assignment', validateExport('test/fixtures/xml/processmaker-group-assignment.bpmn'));
 
+        it('Task expression assignment', validateExport('test/fixtures/xml/processmaker-expression-assignment.bpmn'));
+
         it('Task group assignment', validateExport('test/fixtures/xml/processmaker-task-reassignment.bpmn'));
     });
 
