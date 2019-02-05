@@ -155,6 +155,25 @@ describe('read', function() {
             });
         });
 
+        it('Load expression assignments from Task', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-expression-assignment.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    id: 'task',
+                    name: 'Task',
+                    assignment: 'group',
+                    assignmentRules: '[{&#34;type&#34;:&#34;user&#34;,&#34;assignee&#34;:2,&#34;expression&#34;:&#34;Edad &#62; 10&#34;}]'
+                });
+                done(err);
+            });
+        });
+
         it('Load pm:allowReassginment attribute', function(done) {
 
             // given

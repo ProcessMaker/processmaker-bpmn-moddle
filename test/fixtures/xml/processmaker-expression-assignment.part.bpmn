@@ -1,0 +1,6 @@
+<task xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="task"
+      name="Task"
+      pm:assignment="group"
+      pm:assignmentRules="[{&#38;#34;type&#38;#34;:&#38;#34;user&#38;#34;,&#38;#34;assignee&#38;#34;:2,&#38;#34;expression&#38;#34;:&#38;#34;Edad &#38;#62; 10&#38;#34;}]" />

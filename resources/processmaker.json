@@ -57,6 +57,11 @@
           "name": "allowReassignment",
           "isAttr": true,
           "type": "Boolean"
+        },
+        {
+          "name": "assignmentRules",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
