@@ -77,5 +77,15 @@
         </xsd:complexContent>
     </xsd:complexType>
 
+    <xsd:complexType name="tPmStartEvent">
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tStartEvent">
+                <xsd:attribute name="assignment" type="xsd:string" use="optional"/>
+                <xsd:attribute name="assignedUsers" type="xsd:string" use="optional"/>
+                <xsd:attribute name="assignedGroups" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
 </xsd:schema>
 
