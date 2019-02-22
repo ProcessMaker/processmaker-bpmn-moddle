@@ -264,6 +264,56 @@ describe('write', function() {
             });
         });
 
+        it('Write Start Event Assignment', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:StartEvent', {
+                'name': 'start',
+                'assignment': 'user',
+                'assignedUsers': '1,2',
+            });
+
+            var expectedXML =
+              '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'name="start" ' +
+              'pm:assignment="user" pm:assignedUsers="1,2" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
+        it('Write Start Event Group Assignment', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:StartEvent', {
+                'name': 'start',
+                'assignment': 'group',
+                'assignedGroups': '10,20',
+            });
+
+            var expectedXML =
+              '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'name="start" ' +
+              'pm:assignment="group" pm:assignedGroups="10,20" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
     });
 
 });

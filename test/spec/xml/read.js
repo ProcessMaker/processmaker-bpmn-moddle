@@ -194,6 +194,44 @@ describe('read', function() {
             });
         });
 
+        it('Load Star Event Assignment', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-assignment-startEvent.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:StartEvent', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:StartEvent',
+                    id: 'start',
+                    name: 'Start Event',
+                    assignment: 'user',
+                    assignedUsers: '1',
+                });
+                done(err);
+            });
+        });
+
+        it('Load Star Event Group Assignment', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-assignment-groups-startEvent.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:StartEvent', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:StartEvent',
+                    id: 'start',
+                    name: 'Start Event',
+                    assignment: 'group',
+                    assignedGroups: '10,20',
+                });
+                done(err);
+            });
+        });
+
     });
 
 });
