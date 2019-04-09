@@ -87,5 +87,31 @@
         </xsd:complexContent>
     </xsd:complexType>
 
+    <xsd:complexType name="tPmIntermediateCatchEvent">
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tIntermediateCatchEvent">
+                <xsd:attribute name="allowedUsers" type="xsd:string" use="optional"/>
+                <xsd:attribute name="allowedGroups" type="xsd:string" use="optional"/>
+                <xsd:attribute name="whitelist" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tPmMessageEventDefinition">
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tMessageEventDefinition">
+                <xsd:attribute name="dataName" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tPmSequenceFlow">
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tSequenceFlow">
+                <xsd:attribute name="startEvent" type="xsd:string" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
 </xsd:schema>
 

@@ -232,6 +232,60 @@ describe('read', function() {
             });
         });
 
+        it('Load Intermediate Catch Event', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-intermediate-catch-event.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:IntermediateCatchEvent', function(err, element) {
+                // then
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:IntermediateCatchEvent',
+                    id: 'catch',
+                    name: 'Catch',
+                    allowedUsers: '1,2',
+                    allowedGroups: '10,20',
+                    whitelist: '192.168.1.1/24,*.example.com',
+                });
+                done(err);
+            });
+        });
+
+        it('Load Message Definition', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-message-definition.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:MessageEventDefinition', function(err, element) {
+                // then
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:MessageEventDefinition',
+                    id: 'message',
+                    dataName: 'order',
+                });
+                done(err);
+            });
+        });
+
+        it('Load Sequence Flow with Start Event', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-sequence-flow-start-event.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:SequenceFlow', function(err, element) {
+                // then
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:SequenceFlow',
+                    id: 'sequence_flow',
+                    startEvent: 'startId',
+                });
+                done(err);
+            });
+        });
+
     });
 
 });
