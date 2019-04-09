@@ -161,6 +161,55 @@
       ]
     },
     {
+      "name": "IntermediateCatchEvent",
+      "extends": [
+        "bpmn:IntermediateCatchEvent"
+      ],
+      "properties": [
+        {
+          "name": "allowedUsers",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "allowedGroups",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "whitelist",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "MessageEventDefinition",
+      "extends": [
+        "bpmn:MessageEventDefinition"
+      ],
+      "properties": [
+        {
+          "name": "dataName",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "MessageEventDefinition",
+      "extends": [
+        "bpmn:MessageEventDefinition"
+      ],
+      "properties": [
+        {
+          "name": "dataName",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
       "name": "SequenceFlow",
       "extends": [
         "bpmn:SequenceFlow"

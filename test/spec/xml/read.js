@@ -238,9 +238,9 @@ describe('read', function() {
             var xml = readFile('test/fixtures/xml/processmaker-intermediate-catch-event.part.bpmn');
 
             // when
-            moddle.fromXML(xml, 'bpmn:IntermediateCatchEvent', function(err, task) {
+            moddle.fromXML(xml, 'bpmn:IntermediateCatchEvent', function(err, element) {
                 // then
-                expect(task).to.jsonEqual({
+                expect(element).to.jsonEqual({
                     '$type': 'bpmn:IntermediateCatchEvent',
                     id: 'catch',
                     name: 'Catch',
@@ -258,10 +258,10 @@ describe('read', function() {
             var xml = readFile('test/fixtures/xml/processmaker-message-definition.part.bpmn');
 
             // when
-            moddle.fromXML(xml, 'bpmn:MessageDefinition', function(err, task) {
+            moddle.fromXML(xml, 'bpmn:MessageEventDefinition', function(err, element) {
                 // then
-                expect(task).to.jsonEqual({
-                    '$type': 'bpmn:MessageDefinition',
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:MessageEventDefinition',
                     id: 'message',
                     dataName: 'order',
                 });
@@ -275,14 +275,12 @@ describe('read', function() {
             var xml = readFile('test/fixtures/xml/processmaker-sequence-flow-start-event.part.bpmn');
 
             // when
-            moddle.fromXML(xml, 'bpmn:SequenceFlow', function(err, task) {
+            moddle.fromXML(xml, 'bpmn:SequenceFlow', function(err, element) {
                 // then
-                expect(task).to.jsonEqual({
+                expect(element).to.jsonEqual({
                     '$type': 'bpmn:SequenceFlow',
                     id: 'sequence_flow',
-                    sourceRef: 'id1',
-                    targetRef: 'id2',
-                    startEvent: 'id3',
+                    startEvent: 'startId',
                 });
                 done(err);
             });
