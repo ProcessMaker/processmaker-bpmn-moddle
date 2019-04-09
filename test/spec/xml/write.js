@@ -326,7 +326,7 @@ describe('write', function() {
             });
 
             var expectedXML =
-              '<bpmn:IntermediateCatchEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              '<bpmn:intermediateCatchEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'id="catch" ' +
               'name="catch" ' +
@@ -346,13 +346,13 @@ describe('write', function() {
         it('Write Message Definition', function(done) {
 
             // given
-            var fieldElem = moddle.create('bpmn:MessageDefinition', {
+            var fieldElem = moddle.create('bpmn:MessageEventDefinition', {
                 id: 'message',
                 dataName: 'order',
             });
 
             var expectedXML =
-              '<bpmn:MessageDefinition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              '<bpmn:messageEventDefinition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'id="message" ' +
               'pm:dataName="order" />';
@@ -372,18 +372,14 @@ describe('write', function() {
             // given
             var fieldElem = moddle.create('bpmn:SequenceFlow', {
                 id: 'sequence_flow',
-                sourceRef: 'id1',
-                targetRef: 'id2',
                 startEvent: 'id3',
             });
 
             var expectedXML =
-              '<bpmn:SequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              '<bpmn:sequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'id="sequence_flow" ' +
-              'sourceRef="id1" ' +
-              'targetRef="id2" ' +
-              'pm:dataName="id3" />';
+              'pm:startEvent="id3" />';
 
             // when
             write(fieldElem, function(err, result) {
