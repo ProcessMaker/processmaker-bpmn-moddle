@@ -314,6 +314,87 @@ describe('write', function() {
             });
         });
 
+        it('Write Intermediate Catch Event', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:IntermediateCatchEvent', {
+                id: 'catch',
+                name: 'catch',
+                allowedUsers: '1,2',
+                allowedGroups: '10,20',
+                whitelist: '192.168.1.1/24,*.example.com',
+            });
+
+            var expectedXML =
+              '<bpmn:IntermediateCatchEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'id="catch" ' +
+              'name="catch" ' +
+              'pm:allowedUsers="1,2" pm:allowedGroups="10,20" '+
+              'pm:whitelist="192.168.1.1/24,*.example.com" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
+        it('Write Message Definition', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:MessageDefinition', {
+                id: 'message',
+                dataName: 'order',
+            });
+
+            var expectedXML =
+              '<bpmn:MessageDefinition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'id="message" ' +
+              'pm:dataName="order" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
+        it('Write Sequence Flow with Start Event', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:SequenceFlow', {
+                id: 'sequence_flow',
+                sourceRef: 'id1',
+                targetRef: 'id2',
+                startEvent: 'id3',
+            });
+
+            var expectedXML =
+              '<bpmn:SequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'id="sequence_flow" ' +
+              'sourceRef="id1" ' +
+              'targetRef="id2" ' +
+              'pm:dataName="id3" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
     });
 
 });

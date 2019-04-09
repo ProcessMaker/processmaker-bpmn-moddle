@@ -63,6 +63,10 @@ describe('import -> export roundtrip', function() {
         it('Task group assignment', validateExport('test/fixtures/xml/processmaker-task-reassignment.bpmn'));
 
         it('Start event assignment', validateExport('test/fixtures/xml/processmaker-startEvent-assignment.bpmn'));
+
+        it('Intermediate Catch Message Event', validateExport('test/fixtures/xml/processmaker-intermediate-catch-event.bpmn'));
+
+        it('Call Activity', validateExport('test/fixtures/xml/processmaker-call-activity.bpmn'));
     });
 
 });
