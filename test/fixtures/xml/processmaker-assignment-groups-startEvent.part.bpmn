@@ -3,4 +3,5 @@
       id="start"
       name="Start Event"
       pm:assignment="group"
-      pm:assignedGroups="10,20" />
+      pm:assignedGroups="10,20"
+      pm:config="{}" />

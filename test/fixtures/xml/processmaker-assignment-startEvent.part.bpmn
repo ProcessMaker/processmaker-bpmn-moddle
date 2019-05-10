@@ -3,4 +3,5 @@
       id="start"
       name="Start Event"
       pm:assignment="user"
-      pm:assignedUsers="1" />
+      pm:assignedUsers="1"
+      pm:config="{}" />
