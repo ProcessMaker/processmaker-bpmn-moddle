@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="ScriptTest">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="scripttask" />
+        <intermediateCatchEvent id="scripttask" name="Script Task" pm:scriptRef="script-reference-id">
+            <messageEventDefinition id="_2_ED_1" pm:dataName="docusign_event"/>
+        </intermediateCatchEvent>
+        <sequenceFlow sourceRef="scripttask" targetRef="task2" />
+        <userTask id="task2" />
+    </process>
+</definitions>

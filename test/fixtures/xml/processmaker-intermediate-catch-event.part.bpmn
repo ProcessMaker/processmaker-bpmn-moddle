@@ -1,0 +1,7 @@
+<intermediateCatchEvent xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="catch"
+      name="Catch"
+      pm:allowedUsers="1,2"
+      pm:allowedGroups="10,20"
+      pm:whitelist="192.168.1.1/24,*.example.com" />
