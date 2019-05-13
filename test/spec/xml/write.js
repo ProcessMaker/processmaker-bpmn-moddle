@@ -271,13 +271,14 @@ describe('write', function() {
                 'name': 'start',
                 'assignment': 'user',
                 'assignedUsers': '1,2',
+                'config': '{}',
             });
 
             var expectedXML =
               '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="start" ' +
-              'pm:assignment="user" pm:assignedUsers="1,2" />';
+              'pm:assignment="user" pm:assignedUsers="1,2" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -296,13 +297,14 @@ describe('write', function() {
                 'name': 'start',
                 'assignment': 'group',
                 'assignedGroups': '10,20',
+                'config': '{}',
             });
 
             var expectedXML =
               '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="start" ' +
-              'pm:assignment="group" pm:assignedGroups="10,20" />';
+              'pm:assignment="group" pm:assignedGroups="10,20" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {

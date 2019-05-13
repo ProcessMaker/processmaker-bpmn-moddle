@@ -208,6 +208,7 @@ describe('read', function() {
                     name: 'Start Event',
                     assignment: 'user',
                     assignedUsers: '1',
+                    config: "{}",
                 });
                 done(err);
             });
@@ -227,6 +228,7 @@ describe('read', function() {
                     name: 'Start Event',
                     assignment: 'group',
                     assignedGroups: '10,20',
+                    config: "{}",
                 });
                 done(err);
             });

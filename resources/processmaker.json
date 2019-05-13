@@ -157,6 +157,11 @@
           "name": "assignedGroups",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
