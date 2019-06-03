@@ -6,7 +6,7 @@
         <startEvent id="start" />
         <sequenceFlow sourceRef="start" targetRef="scripttask" />
         <intermediateCatchEvent id="scripttask" name="Script Task" pm:scriptRef="script-reference-id">
-            <messageEventDefinition id="_2_ED_1" pm:dataName="docusign_event"/>
+            <messageEventDefinition id="_2_ED_1" pm:variableName="docusign_event"/>
         </intermediateCatchEvent>
         <sequenceFlow sourceRef="scripttask" targetRef="task2" />
         <userTask id="task2" />
