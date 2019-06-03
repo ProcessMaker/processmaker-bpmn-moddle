@@ -195,7 +195,7 @@
       ],
       "properties": [
         {
-          "name": "dataName",
+          "name": "variableName",
           "isAttr": true,
           "type": "String"
         }
@@ -208,7 +208,7 @@
       ],
       "properties": [
         {
-          "name": "dataName",
+          "name": "variableName",
           "isAttr": true,
           "type": "String"
         }

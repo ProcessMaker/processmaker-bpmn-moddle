@@ -350,14 +350,14 @@ describe('write', function() {
             // given
             var fieldElem = moddle.create('bpmn:MessageEventDefinition', {
                 id: 'message',
-                dataName: 'order',
+                variableName: 'order',
             });
 
             var expectedXML =
               '<bpmn:messageEventDefinition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'id="message" ' +
-              'pm:dataName="order" />';
+              'pm:variableName="order" />';
 
             // when
             write(fieldElem, function(err, result) {

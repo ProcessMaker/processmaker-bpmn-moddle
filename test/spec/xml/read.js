@@ -265,7 +265,7 @@ describe('read', function() {
                 expect(element).to.jsonEqual({
                     '$type': 'bpmn:MessageEventDefinition',
                     id: 'message',
-                    dataName: 'order',
+                    variableName: 'order',
                 });
                 done(err);
             });
