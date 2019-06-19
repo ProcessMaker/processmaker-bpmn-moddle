@@ -111,7 +111,8 @@ describe('read', function() {
                     'dueIn': 10,
                     'notifyAfterRouting': true,
                     'notifyRequestCreator': false,
-                    'startQuantity': 1
+                    'startQuantity': 1,
+                    'config': '{}'
                 });
                 done(err);
             });
