@@ -88,8 +88,8 @@ describe('write', function() {
             var expectedXML =
               '<bpmn:serviceTask xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-              'name="ServiceTask_1" implementation="EchoConnector" pm:implementationVersion="10" ' +
-              'pm:config="{&#34;message&#34;:&#34;hello&#34;}" />';
+              'name="ServiceTask_1" pm:config="{&#34;message&#34;:&#34;hello&#34;}" ' +
+              'implementation="EchoConnector" pm:implementationVersion="10" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -113,6 +113,7 @@ describe('write', function() {
                 'notifyRequestCreator': false,
                 'assignment': 'user',
                 'assignedUsers': '1',
+                'config': "{}"
             });
 
             var expectedXML =
@@ -121,7 +122,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="10" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="user" pm:assignedUsers="1" />';
+              'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -172,6 +173,7 @@ describe('write', function() {
                 'assignment': 'group',
                 'assignedUsers': '10,20',
                 'assignedGroups': '999',
+                'config': '{}',
             });
 
             var expectedXML =
@@ -180,7 +182,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="1" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" />';
+              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -207,6 +209,7 @@ describe('write', function() {
                 'assignedUsers': '10,20',
                 'assignedGroups': '999',
                 'assignmentRules': '[{&#34;type&#34;:&#34;user&#34;,&#34;assignee&#34;:2,&#34;expression&#34;:&#34;Edad &#62; 10&#34;}]',
+                'config': '{}',
             });
 
             var expectedXML =
@@ -216,7 +219,8 @@ describe('write', function() {
                 'pm:screenVersion="1" pm:dueIn="3" ' +
                 'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
                 'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" ' +
-                'pm:assignmentRules="[{&#38;#34;type&#38;#34;:&#38;#34;user&#38;#34;,&#38;#34;assignee&#38;#34;:2,&#38;#34;expression&#38;#34;:&#38;#34;Edad &#38;#62; 10&#38;#34;}]" />';
+                'pm:assignmentRules="[{&#38;#34;type&#38;#34;:&#38;#34;user&#38;#34;,&#38;#34;assignee&#38;#34;:2,&#38;#34;expression&#38;#34;:&#38;#34;Edad &#38;#62; 10&#38;#34;}]" ' +
+                'pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -244,6 +248,7 @@ describe('write', function() {
                 'assignedUsers': '10,20',
                 'assignedGroups': '999',
                 'allowReassignment': true,
+                'config': '{}'
             });
 
             var expectedXML =
@@ -252,7 +257,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="1" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" pm:allowReassignment="true" />';
+              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" pm:allowReassignment="true" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {

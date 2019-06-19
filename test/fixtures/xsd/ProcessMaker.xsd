@@ -21,6 +21,7 @@
                 <xsd:attribute name="assignedGroups" type="xsd:string"/>
                 <xsd:attribute name="assignmentRules" type="xsd:string"/>
                 <xsd:attribute name="allowReassignment" type="xsd:boolean" default="false"/>
+                <xsd:attribute name="config" type="xsd:string" use="optional"/>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
@@ -38,6 +39,7 @@
                 <xsd:attribute name="assignedGroups" type="xsd:string"/>
                 <xsd:attribute name="assignmentRules" type="xsd:string"/>
                 <xsd:attribute name="allowReassignment" type="xsd:boolean" default="false"/>
+                <xsd:attribute name="config" type="xsd:string" use="optional"/>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>

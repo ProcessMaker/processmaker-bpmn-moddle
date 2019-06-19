@@ -9,4 +9,5 @@
       pm:dueIn="10"
       pm:notifyAfterRouting="true"
       pm:notifyRequestCreator="false"
-      startQuantity="1" />
+      startQuantity="1"
+      pm:config="{}" />
