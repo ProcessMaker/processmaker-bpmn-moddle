@@ -1,0 +1,6 @@
+<callActivity xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="call-activity-1"
+      name="Call Activity 1"
+      calledElement="ProcessId-123"
+      pm:config="{}" />

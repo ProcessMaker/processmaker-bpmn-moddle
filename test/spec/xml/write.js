@@ -400,4 +400,30 @@ describe('write', function() {
 
     });
 
+    it('Write Call Activity', function(done) {
+
+        // given
+        var fieldElem = moddle.create('bpmn:CallActivity', {
+            'name': 'Call Activity 1',
+            'calledElement': 'ProcessId-123',
+            'config': '{"message":"hello"}',
+        });
+
+        var expectedXML =
+          '<bpmn:callActivity xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+          'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+          'name="Call Activity 1" ' +
+          'calledElement="ProcessId-123" ' +
+          'pm:config="{&#34;message&#34;:&#34;hello&#34;}" />';
+
+        // when
+        write(fieldElem, function(err, result) {
+
+            // then
+            expect(result).to.eql(expectedXML);
+
+            done(err);
+        });
+    });
+
 });
