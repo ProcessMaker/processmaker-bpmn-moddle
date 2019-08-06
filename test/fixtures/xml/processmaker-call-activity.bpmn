@@ -5,7 +5,7 @@
     <process id="UserTaskScreenTest">
         <startEvent id="start" />
         <sequenceFlow sourceRef="start" targetRef="callActivity" pm:startEvent="externalStart" />
-        <callActivity id="callActivity" name="CallActivity" calledElement="1000:ProcessId" />
+        <callActivity id="callActivity" name="CallActivity" calledElement="1000:ProcessId" pm:config="{}" />
         <sequenceFlow sourceRef="callActivity" targetRef="task2" />
         <userTask id="task2" />
     </process>

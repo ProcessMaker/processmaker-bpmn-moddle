@@ -221,6 +221,19 @@
           "type": "String"
         }
       ]
+    },
+    {
+      "name": "CallActivity",
+      "extends": [
+        "bpmn:CallActivity"
+      ],
+      "properties": [
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
     }
   ],
   "emumerations": [ ]

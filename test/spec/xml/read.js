@@ -91,6 +91,25 @@ describe('read', function() {
                 done(err);
             });
         });
+        
+        it('Load Call Activity', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-call-activity.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:CallActivity', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:CallActivity',
+                    'id': 'call-activity-1',
+                    'name': 'Call Activity 1',
+                    'calledElement': 'ProcessId-123',
+                    'config': '{}',
+                });
+                done(err);
+            });
+        });
 
         it('Load Task', function(done) {
 
