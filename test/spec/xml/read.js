@@ -106,6 +106,7 @@ describe('read', function() {
                     'name': 'Call Activity 1',
                     'calledElement': 'ProcessId-123',
                     'config': '{}',
+                    'validations': '[]',
                 });
                 done(err);
             });

@@ -407,6 +407,7 @@ describe('write', function() {
             'name': 'Call Activity 1',
             'calledElement': 'ProcessId-123',
             'config': '{"message":"hello"}',
+            'validations': '[1, 2, 3]'
         });
 
         var expectedXML =
@@ -414,7 +415,8 @@ describe('write', function() {
           'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
           'name="Call Activity 1" ' +
           'calledElement="ProcessId-123" ' +
-          'pm:config="{&#34;message&#34;:&#34;hello&#34;}" />';
+          'pm:config="{&#34;message&#34;:&#34;hello&#34;}" ' +
+          'pm:validations="[1, 2, 3]" />';
 
         // when
         write(fieldElem, function(err, result) {
