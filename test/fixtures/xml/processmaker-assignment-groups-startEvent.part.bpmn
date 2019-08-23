@@ -5,4 +5,4 @@
       pm:assignment="group"
       pm:assignedGroups="10,20"
       pm:config="{}"
-      pm:validations="[]" />
+      pm:validations="1,2,3" />

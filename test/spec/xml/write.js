@@ -277,14 +277,14 @@ describe('write', function() {
                 'assignment': 'user',
                 'assignedUsers': '1,2',
                 'config': '{}',
-                'validations': '[]',
+                'validations': '1,2,3',
             });
 
             var expectedXML =
               '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="start" ' +
-              'pm:assignment="user" pm:assignedUsers="1,2" pm:config="{}" pm:validations="[]" />';
+              'pm:assignment="user" pm:assignedUsers="1,2" pm:config="{}" pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {

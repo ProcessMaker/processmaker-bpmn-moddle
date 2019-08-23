@@ -106,7 +106,7 @@ describe('read', function() {
                     'name': 'Call Activity 1',
                     'calledElement': 'ProcessId-123',
                     'config': '{}',
-                    'validations': '[]',
+                    'validations': '1,2,3',
                 });
                 done(err);
             });
@@ -230,7 +230,7 @@ describe('read', function() {
                     assignment: 'user',
                     assignedUsers: '1',
                     config: "{}",
-                    validations: '[]',
+                    validations: '1,2,3',
                 });
                 done(err);
             });
@@ -251,7 +251,7 @@ describe('read', function() {
                     assignment: 'group',
                     assignedGroups: '10,20',
                     config: "{}",
-                    validations: '[]',
+                    validations: '1,2,3',
                 });
                 done(err);
             });

@@ -4,4 +4,4 @@
       name="Call Activity 1"
       calledElement="ProcessId-123"
       pm:config="{}"
-      validations="[]" />
+      validations="1,2,3" />
