@@ -332,6 +332,7 @@ describe('write', function() {
                 allowedUsers: '1,2',
                 allowedGroups: '10,20',
                 whitelist: '192.168.1.1/24,*.example.com',
+                validations: '1,2,3',
             });
 
             var expectedXML =
@@ -340,7 +341,8 @@ describe('write', function() {
               'id="catch" ' +
               'name="catch" ' +
               'pm:allowedUsers="1,2" pm:allowedGroups="10,20" '+
-              'pm:whitelist="192.168.1.1/24,*.example.com" />';
+              'pm:whitelist="192.168.1.1/24,*.example.com" ' +
+              'pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {

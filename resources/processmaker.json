@@ -190,6 +190,11 @@
           "name": "whitelist",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "validations",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
