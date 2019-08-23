@@ -90,6 +90,11 @@
           "name": "scriptVersion",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "validations",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
@@ -101,6 +106,11 @@
       "properties": [
         {
           "name": "implementationVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "validations",
           "isAttr": true,
           "type": "String"
         }
