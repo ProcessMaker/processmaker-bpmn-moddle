@@ -3,9 +3,9 @@
              xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
              targetNamespace="test">
     <process id="UserTaskScreenTest">
-        <startEvent id="start" pm:assignment="group" pm:assignedGroups="1" pm:config="{}" />
+        <startEvent id="start" pm:assignment="group" pm:assignedGroups="1" pm:config="{}" pm:validations="[]" />
         <sequenceFlow sourceRef="start" targetRef="usertask" />
-        <startEvent id="start2" pm:assignment="user" pm:assignedUsers="1"  pm:config="{}" />
+        <startEvent id="start2" pm:assignment="user" pm:assignedUsers="1"  pm:config="{}" pm:validations="[]" />
         <sequenceFlow sourceRef="start2" targetRef="task2" />
         <userTask id="usertask" name="Task" pm:screenRef="screen-reference-id-1" pm:assignment="requestor" />
         <sequenceFlow sourceRef="usertask" targetRef="task2" />

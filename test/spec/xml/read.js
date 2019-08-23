@@ -215,7 +215,7 @@ describe('read', function() {
             });
         });
 
-        it('Load Star Event Assignment', function(done) {
+        it('Load Start Event Assignment', function(done) {
 
             // given
             var xml = readFile('test/fixtures/xml/processmaker-assignment-startEvent.part.bpmn');
@@ -230,12 +230,13 @@ describe('read', function() {
                     assignment: 'user',
                     assignedUsers: '1',
                     config: "{}",
+                    validations: '[]',
                 });
                 done(err);
             });
         });
 
-        it('Load Star Event Group Assignment', function(done) {
+        it('Load Start Event Group Assignment', function(done) {
 
             // given
             var xml = readFile('test/fixtures/xml/processmaker-assignment-groups-startEvent.part.bpmn');
@@ -250,6 +251,7 @@ describe('read', function() {
                     assignment: 'group',
                     assignedGroups: '10,20',
                     config: "{}",
+                    validations: '[]',
                 });
                 done(err);
             });
