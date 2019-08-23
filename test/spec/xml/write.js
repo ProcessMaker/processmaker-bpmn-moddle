@@ -113,7 +113,8 @@ describe('write', function() {
                 'notifyRequestCreator': false,
                 'assignment': 'user',
                 'assignedUsers': '1',
-                'config': "{}"
+                'config': "{}",
+                'validations': '1,2,3'
             });
 
             var expectedXML =
@@ -122,7 +123,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="10" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" />';
+              'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {

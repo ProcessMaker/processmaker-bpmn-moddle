@@ -10,4 +10,5 @@
       pm:notifyAfterRouting="true"
       pm:notifyRequestCreator="false"
       startQuantity="1"
-      pm:config="{}" />
+      pm:config="{}"
+      validations="1,2,3" />

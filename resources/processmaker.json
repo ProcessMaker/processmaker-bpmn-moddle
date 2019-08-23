@@ -67,6 +67,11 @@
           "name": "config",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "validations",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },

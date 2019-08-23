@@ -132,7 +132,8 @@ describe('read', function() {
                     'notifyAfterRouting': true,
                     'notifyRequestCreator': false,
                     'startQuantity': 1,
-                    'config': '{}'
+                    'config': '{}',
+                    'validations': '1,2,3'
                 });
                 done(err);
             });
