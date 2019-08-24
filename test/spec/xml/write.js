@@ -113,7 +113,8 @@ describe('write', function() {
                 'notifyRequestCreator': false,
                 'assignment': 'user',
                 'assignedUsers': '1',
-                'config': "{}"
+                'config': "{}",
+                'validations': '1,2,3'
             });
 
             var expectedXML =
@@ -122,7 +123,7 @@ describe('write', function() {
               'name="Task_1" pm:screenRef="screen-001-000" ' +
               'pm:screenVersion="10" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
-              'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" />';
+              'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -277,13 +278,14 @@ describe('write', function() {
                 'assignment': 'user',
                 'assignedUsers': '1,2',
                 'config': '{}',
+                'validations': '1,2,3',
             });
 
             var expectedXML =
               '<bpmn:startEvent xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="start" ' +
-              'pm:assignment="user" pm:assignedUsers="1,2" pm:config="{}" />';
+              'pm:assignment="user" pm:assignedUsers="1,2" pm:config="{}" pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -330,6 +332,7 @@ describe('write', function() {
                 allowedUsers: '1,2',
                 allowedGroups: '10,20',
                 whitelist: '192.168.1.1/24,*.example.com',
+                validations: '1,2,3',
             });
 
             var expectedXML =
@@ -338,7 +341,8 @@ describe('write', function() {
               'id="catch" ' +
               'name="catch" ' +
               'pm:allowedUsers="1,2" pm:allowedGroups="10,20" '+
-              'pm:whitelist="192.168.1.1/24,*.example.com" />';
+              'pm:whitelist="192.168.1.1/24,*.example.com" ' +
+              'pm:validations="1,2,3" />';
 
             // when
             write(fieldElem, function(err, result) {
@@ -407,6 +411,7 @@ describe('write', function() {
             'name': 'Call Activity 1',
             'calledElement': 'ProcessId-123',
             'config': '{"message":"hello"}',
+            'validations': '[1, 2, 3]'
         });
 
         var expectedXML =
@@ -414,7 +419,8 @@ describe('write', function() {
           'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
           'name="Call Activity 1" ' +
           'calledElement="ProcessId-123" ' +
-          'pm:config="{&#34;message&#34;:&#34;hello&#34;}" />';
+          'pm:config="{&#34;message&#34;:&#34;hello&#34;}" ' +
+          'pm:validations="[1, 2, 3]" />';
 
         // when
         write(fieldElem, function(err, result) {

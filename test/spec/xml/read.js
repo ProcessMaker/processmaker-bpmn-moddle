@@ -106,6 +106,7 @@ describe('read', function() {
                     'name': 'Call Activity 1',
                     'calledElement': 'ProcessId-123',
                     'config': '{}',
+                    'validations': '1,2,3',
                 });
                 done(err);
             });
@@ -131,7 +132,8 @@ describe('read', function() {
                     'notifyAfterRouting': true,
                     'notifyRequestCreator': false,
                     'startQuantity': 1,
-                    'config': '{}'
+                    'config': '{}',
+                    'validations': '1,2,3'
                 });
                 done(err);
             });
@@ -214,7 +216,7 @@ describe('read', function() {
             });
         });
 
-        it('Load Star Event Assignment', function(done) {
+        it('Load Start Event Assignment', function(done) {
 
             // given
             var xml = readFile('test/fixtures/xml/processmaker-assignment-startEvent.part.bpmn');
@@ -229,12 +231,13 @@ describe('read', function() {
                     assignment: 'user',
                     assignedUsers: '1',
                     config: "{}",
+                    validations: '1,2,3',
                 });
                 done(err);
             });
         });
 
-        it('Load Star Event Group Assignment', function(done) {
+        it('Load Start Event Group Assignment', function(done) {
 
             // given
             var xml = readFile('test/fixtures/xml/processmaker-assignment-groups-startEvent.part.bpmn');
@@ -249,6 +252,7 @@ describe('read', function() {
                     assignment: 'group',
                     assignedGroups: '10,20',
                     config: "{}",
+                    validations: '1,2,3',
                 });
                 done(err);
             });
@@ -269,6 +273,7 @@ describe('read', function() {
                     allowedUsers: '1,2',
                     allowedGroups: '10,20',
                     whitelist: '192.168.1.1/24,*.example.com',
+                    validations: '1,2,3',
                 });
                 done(err);
             });
