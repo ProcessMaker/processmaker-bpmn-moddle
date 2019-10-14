@@ -107,6 +107,8 @@ describe('write', function() {
             var fieldElem = moddle.create('bpmn:Task', {
                 'name': 'Task_1',
                 'screenRef': 'screen-001-000',
+                'allowInterstitial': true,
+                'interstitialScreenRef': 'screen-002-000',
                 'screenVersion': '10',
                 'dueIn': 3,
                 'notifyAfterRouting': true,
@@ -120,7 +122,8 @@ describe('write', function() {
             var expectedXML =
               '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-              'name="Task_1" pm:screenRef="screen-001-000" ' +
+              'name="Task_1" pm:screenRef="screen-001-000" pm:allowInterstitial="true" ' +
+              'pm:interstitialScreenRef="screen-002-000" ' +
               'pm:screenVersion="10" pm:dueIn="3" ' +
               'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
               'pm:assignment="user" pm:assignedUsers="1" pm:config="{}" pm:validations="1,2,3" />';
