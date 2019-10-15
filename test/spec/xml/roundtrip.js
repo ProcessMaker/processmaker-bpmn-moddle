@@ -67,6 +67,8 @@ describe('import -> export roundtrip', function() {
         it('Intermediate Catch Message Event', validateExport('test/fixtures/xml/processmaker-intermediate-catch-event.bpmn'));
 
         it('Call Activity', validateExport('test/fixtures/xml/processmaker-call-activity.bpmn'));
+
+        it('pm:allowInterstitial & pm:interstitialScreenRef', validateExport('test/fixtures/xml/processmaker-task-interstitial.bpmn'));
     });
 
 });
