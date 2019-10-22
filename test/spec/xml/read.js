@@ -91,7 +91,7 @@ describe('read', function() {
                 done(err);
             });
         });
-        
+
         it('Load Call Activity', function(done) {
 
             // given
@@ -127,6 +127,35 @@ describe('read', function() {
                     'isForCompensation': false,
                     'name': 'Request approval',
                     'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
+                    'screenVersion': '10',
+                    'dueIn': 10,
+                    'notifyAfterRouting': true,
+                    'notifyRequestCreator': false,
+                    'startQuantity': 1,
+                    'config': '{}',
+                    'validations': '1,2,3'
+                });
+                done(err);
+            });
+        });
+
+        it('Load Interstitial Configuration', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-task-interstitial.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    'completionQuantity': 1,
+                    'id': 'approve',
+                    'isForCompensation': false,
+                    'name': 'Request approval',
+                    'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
+                    'allowInterstitial':true,
+                    'interstitialScreenRef':'screen-000-000-0001',
                     'screenVersion': '10',
                     'dueIn': 10,
                     'notifyAfterRouting': true,

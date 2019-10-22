@@ -19,6 +19,16 @@
           "type": "String"
         },
         {
+          "name": "allowInterstitial",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "interstitialScreenRef",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "screenVersion",
           "isAttr": true,
           "type": "String"
