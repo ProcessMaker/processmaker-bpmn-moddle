@@ -64,6 +64,11 @@
           "type": "String"
         },
         {
+          "name": "assignmentLock",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
           "name": "allowReassignment",
           "isAttr": true,
           "type": "Boolean"

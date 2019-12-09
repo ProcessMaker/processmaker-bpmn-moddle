@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="UserAssignmentLockTest">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="usertask" />
+        <userTask id="usertask" name="Task" pm:screenRef="screen-reference-id-1" pm:assignment="requestor" />
+        <sequenceFlow sourceRef="usertask" targetRef="task2" />
+        <userTask id="task2" name="Task 2" pm:screenRef="screen-reference-id-2" pm:assignment="group"
+                  pm:assignedGroups="100" pm:assignmentLock="true" />
+    </process>
+</definitions>

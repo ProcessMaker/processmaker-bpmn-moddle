@@ -271,6 +271,41 @@ describe('write', function() {
         });
 
 
+        it('Write Task - Set Assignment Lock', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:Task', {
+                'name': 'Task_1',
+                'screenRef': 'screen-001-000',
+                'screenVersion': '1',
+                'dueIn': 3,
+                'notifyAfterRouting': true,
+                'notifyRequestCreator': false,
+                'assignment': 'group',
+                'assignedUsers': '10,20',
+                'assignedGroups': '999',
+                'assignmentLock': true,
+                'config': '{}'
+            });
+
+            var expectedXML =
+              '<bpmn:task xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'name="Task_1" pm:screenRef="screen-001-000" ' +
+              'pm:screenVersion="1" pm:dueIn="3" ' +
+              'pm:notifyAfterRouting="true" pm:notifyRequestCreator="false" ' +
+              'pm:assignment="group" pm:assignedUsers="10,20" pm:assignedGroups="999" pm:assignmentLock="true"' +
+              ' pm:config="{}" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
 
         it('Write Task Allow Reassignment', function(done) {
 
