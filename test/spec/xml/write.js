@@ -450,19 +450,16 @@ describe('write', function() {
             });
         });
 
-        it('Write Sequence Flow with Start Event', function(done) {
+        it('Write Sequence Flow', function(done) {
 
             // given
             var fieldElem = moddle.create('bpmn:SequenceFlow', {
                 id: 'sequence_flow',
-                startEvent: 'id3',
             });
 
             var expectedXML =
               '<bpmn:sequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
-              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
-              'id="sequence_flow" ' +
-              'pm:startEvent="id3" />';
+              'id="sequence_flow" />';
 
             // when
             write(fieldElem, function(err, result) {

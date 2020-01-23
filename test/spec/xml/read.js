@@ -345,10 +345,10 @@ describe('read', function() {
             });
         });
 
-        it('Load Sequence Flow with Start Event', function(done) {
+        it('Load Sequence Flow', function(done) {
 
             // given
-            var xml = readFile('test/fixtures/xml/processmaker-sequence-flow-start-event.part.bpmn');
+            var xml = readFile('test/fixtures/xml/processmaker-sequence-flow.part.bpmn');
 
             // when
             moddle.fromXML(xml, 'bpmn:SequenceFlow', function(err, element) {
@@ -356,7 +356,6 @@ describe('read', function() {
                 expect(element).to.jsonEqual({
                     '$type': 'bpmn:SequenceFlow',
                     id: 'sequence_flow',
-                    startEvent: 'startId',
                 });
                 done(err);
             });
