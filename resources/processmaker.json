@@ -253,13 +253,6 @@
       "name": "SequenceFlow",
       "extends": [
         "bpmn:SequenceFlow"
-      ],
-      "properties": [
-        {
-          "name": "startEvent",
-          "isAttr": true,
-          "type": "String"
-        }
       ]
     },
     {
