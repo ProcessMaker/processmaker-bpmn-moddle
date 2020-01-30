@@ -265,6 +265,25 @@ describe('read', function() {
             });
         });
 
+        it('Load Start Event Interstitial', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-startEvent-interstitial.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:StartEvent', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:StartEvent',
+                    id: 'start',
+                    name: 'Start Event',
+                    allowInterstitial: true,
+                    interstitialScreenRef: 'screen-000-000-0001',
+                });
+                done(err);
+            });
+        });
+
         it('Load Start Event Assignment', function(done) {
 
             // given

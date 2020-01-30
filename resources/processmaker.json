@@ -159,6 +159,16 @@
       ],
       "properties": [
         {
+          "name": "allowInterstitial",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "interstitialScreenRef",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "assignment",
           "isAttr": true,
           "type": "String"
