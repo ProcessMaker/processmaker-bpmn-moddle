@@ -117,7 +117,6 @@
     <xsd:complexType name="tPmSequenceFlow">
         <xsd:complexContent>
             <xsd:extension base="bpmn:tSequenceFlow">
-                <xsd:attribute name="startEvent" type="xsd:string" use="optional"/>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
