@@ -71,6 +71,10 @@ describe('import -> export roundtrip', function() {
         it('Task pm:allowInterstitial & pm:interstitialScreenRef', validateExport('test/fixtures/xml/processmaker-task-interstitial.bpmn'));
 
         it('Start Event pm:allowInterstitial & pm:interstitialScreenRef', validateExport('test/fixtures/xml/processmaker-startEvent-interstitial.bpmn'));
+
+        it('CallActivity user assignment', validateExport('test/fixtures/xml/processmaker-user-assignment-call-activity.bpmn'));
+
+        it('CallActivity group assignment', validateExport('test/fixtures/xml/processmaker-group-assignment-call-activity.bpmn'));
     });
 
 });

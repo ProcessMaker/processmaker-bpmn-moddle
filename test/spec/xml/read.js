@@ -380,6 +380,25 @@ describe('read', function() {
             });
         });
 
+        it('Load Assignment in CallActivity', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-assignment-call-activity.part.bpmn');
+    
+            // when
+            moddle.fromXML(xml, 'bpmn:CallActivity', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:CallActivity',
+                    id: 'call_activity_assignment',
+                    name: 'Call Activity',
+                    assignment: 'group',
+                    assignedGroups: '10,20',
+                });
+                done(err);
+            });
+        });
+
     });
 
 });

@@ -526,4 +526,38 @@ describe('write', function() {
             done(err);
         });
     });
+
+    it('Write Call Activity with Assignment', function(done) {
+
+        // given
+        var fieldElem = moddle.create('bpmn:CallActivity', {
+            'name': 'Call Activity 1',
+            'assignment': 'group',
+            'assignedUsers': '10,20',
+            'assignedGroups': '999',
+            'calledElement': 'ProcessId-123',
+            'config': '{"message":"hello"}',
+            'validations': '[1, 2, 3]'
+        });
+
+        var expectedXML =
+            '<bpmn:callActivity xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+            'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+            'name="Call Activity 1" ' +
+            'calledElement="ProcessId-123" ' +
+            'pm:config="{&#34;message&#34;:&#34;hello&#34;}" ' +
+            'pm:validations="[1, 2, 3]" ' +
+            'pm:assignment="group" ' +
+            'pm:assignedUsers="10,20" ' +
+            'pm:assignedGroups="999" />';
+
+        // when
+        write(fieldElem, function(err, result) {
+
+            // then
+            expect(result).to.eql(expectedXML);
+
+            done(err);
+        });
+    });
 });
