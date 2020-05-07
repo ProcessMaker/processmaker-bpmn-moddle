@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="UserTaskScreenTest">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="task1" />
+        <callActivity id="task1" name="Call Activity 1" pm:assignment="requestor" />
+        <sequenceFlow sourceRef="task1" targetRef="task2" />
+        <callActivity id="task2" name="Call Activity 2" pm:assignment="group" pm:assignedUsers="1" pm:assignedGroups="1" />
+    </process>
+</definitions>

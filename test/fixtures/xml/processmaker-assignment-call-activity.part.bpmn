@@ -1,0 +1,6 @@
+<callActivity xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="call_activity_assignment"
+      name="Call Activity"
+      pm:assignment="group"
+      pm:assignedGroups="10,20" />

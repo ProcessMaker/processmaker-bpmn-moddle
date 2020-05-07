@@ -270,6 +270,21 @@
           "name": "validations",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "assignedUsers",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "assignedGroups",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     }
