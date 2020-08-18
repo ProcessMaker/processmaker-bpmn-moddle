@@ -455,11 +455,13 @@ describe('write', function() {
             // given
             var fieldElem = moddle.create('bpmn:SequenceFlow', {
                 id: 'sequence_flow',
+                config: '{}',
             });
 
             var expectedXML =
               '<bpmn:sequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
-              'id="sequence_flow" />';
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'id="sequence_flow" pm:config="{}" />';
 
             // when
             write(fieldElem, function(err, result) {

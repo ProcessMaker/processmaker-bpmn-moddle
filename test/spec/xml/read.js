@@ -375,6 +375,8 @@ describe('read', function() {
                 expect(element).to.jsonEqual({
                     '$type': 'bpmn:SequenceFlow',
                     id: 'sequence_flow',
+                    name: 'test_flow',
+                    config: '{}',
                 });
                 done(err);
             });
@@ -384,7 +386,7 @@ describe('read', function() {
 
             // given
             var xml = readFile('test/fixtures/xml/processmaker-assignment-call-activity.part.bpmn');
-    
+
             // when
             moddle.fromXML(xml, 'bpmn:CallActivity', function(err, task) {
                 // then
