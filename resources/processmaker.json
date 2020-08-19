@@ -253,6 +253,13 @@
       "name": "SequenceFlow",
       "extends": [
         "bpmn:SequenceFlow"
+      ],
+      "properties": [
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
       ]
     },
     {
