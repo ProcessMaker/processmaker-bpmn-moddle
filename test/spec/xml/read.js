@@ -139,6 +139,24 @@ describe('read', function() {
             });
         });
 
+        it('Load Task With Color', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-task-color.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    'id': 'task',
+                    'name': 'Task',
+                    'color': '#336699'
+                });
+                done(err);
+            });
+        });
+
         it('Load Interstitial Configuration', function(done) {
 
             // given
