@@ -503,6 +503,29 @@ describe('write', function() {
         });
     });
 
+    it('Can write task with color as pm:color', function(done) {
+
+        const withColorAttribute = {
+            name: 'Task',
+            color: '#336699'
+        };
+
+        const taskWithColorAttribute = moddle.create('bpmn:Task', withColorAttribute);
+
+        const expectedPmNamespace = 'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"';
+        const expectedName = `name="${withColorAttribute.name}"`;
+        const expectedPmNamespacedColor = `pm:color="${withColorAttribute.color}"`;
+
+        write(taskWithColorAttribute, function(err, outputXml) {
+
+            expect(outputXml).to.contain(expectedPmNamespacedColor);
+            expect(outputXml).to.contain(expectedPmNamespace);
+            expect(outputXml).to.contain(expectedName);
+
+            done(err);
+        });
+    });
+
     it('Write Start Event Interstitial attributes', function(done) {
 
         // given
