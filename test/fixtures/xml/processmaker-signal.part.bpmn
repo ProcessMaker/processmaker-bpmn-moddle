@@ -1,0 +1,7 @@
+<signal xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="signal_id"
+      name="Signal name"
+      pm:detail="Signal detail"
+      pm:config="{}"
+      />

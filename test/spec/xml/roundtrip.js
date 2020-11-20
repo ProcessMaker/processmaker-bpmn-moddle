@@ -77,6 +77,8 @@ describe('import -> export roundtrip', function() {
         it('CallActivity group assignment', validateExport('test/fixtures/xml/processmaker-group-assignment-call-activity.bpmn'));
 
         it('Sequence Flow pm:config', validateExport('test/fixtures/xml/processmaker-sequence-flow.bpmn'));
+
+        it('Signal', validateExport('test/fixtures/xml/processmaker-signal.bpmn'));
     });
 
 });

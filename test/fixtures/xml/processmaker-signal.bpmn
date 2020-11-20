@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+             targetNamespace="test">
+    <process id="SignalTest">
+        <startEvent id="start" />
+        <sequenceFlow sourceRef="start" targetRef="scripttask" />
+        <scriptTask id="scripttask" name="Script Task" pm:scriptRef="script-reference-id" />
+        <sequenceFlow sourceRef="scripttask" targetRef="task2" pm:config="{}"/>
+        <userTask id="task2" />
+    </process>
+
+    <signal id="Signal_1" name="ProcessName" pm:config="{}" pm:detail="Signal detail"/>
+</definitions>
+

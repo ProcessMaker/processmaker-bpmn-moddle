@@ -419,6 +419,24 @@ describe('read', function() {
             });
         });
 
+        it('Load Signal', function(done) {
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-signal.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Signal', function(err, element) {
+                // then
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:Signal',
+                    id: 'signal_id',
+                    name: 'Signal name',
+                    detail: 'Signal detail',
+                    config: '{}',
+                });
+                done(err);
+            });
+        });
+
     });
 
 });

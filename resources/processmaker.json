@@ -308,6 +308,24 @@
           "type": "String"
         }
       ]
+    },
+    {
+      "name": "Signal",
+      "extends": [
+        "bpmn:Signal"
+      ],
+      "properties": [
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "detail",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
     }
   ],
   "emumerations": [ ]
