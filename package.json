@@ -1,6 +1,6 @@
 {
   "name": "@processmaker/processmaker-bpmn-moddle",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "ProcessMaker moddle extensions for BPMN 2.0",
   "scripts": {
     "all": "run-s lint test",
