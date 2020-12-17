@@ -157,6 +157,24 @@ describe('read', function() {
             });
         });
 
+        it('Load Task With Custom Icon', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-task-custom-icon.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:Task',
+                    'id': 'task',
+                    'name': 'Task',
+                    'customIcon': 'PHN2Zz48L3N2Zz4='
+                });
+                done(err);
+            });
+        });
+
         it('Load Interstitial Configuration', function(done) {
 
             // given
