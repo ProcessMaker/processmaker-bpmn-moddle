@@ -1,0 +1,6 @@
+<bpmn:callActivity
+    id="subprocess"
+    name="Subprocess"
+    pm:customIcon="PHN2Zz48L3N2Zz4="
+/>
+

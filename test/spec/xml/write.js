@@ -551,6 +551,54 @@ describe('write', function() {
         });
     });
 
+    it('Can write task with custom icon as pm:customIcon', function(done) {
+
+        const base64EncodedMinimalSvg = 'PHN2Zz48L3N2Zz4=';
+        const withCustomIcon = {
+            name: 'Task',
+            customIcon: base64EncodedMinimalSvg
+        };
+
+        const taskWithCustomIcon = moddle.create('bpmn:Task', withCustomIcon);
+
+        const expectedPmNamespace = 'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"';
+        const expectedName = `name="${withCustomIcon.name}"`;
+        const expectedPmNamespacedIcon = `pm:customIcon="${withCustomIcon.customIcon}"`;
+
+        write(taskWithCustomIcon, function(err, outputXml) {
+
+            expect(outputXml).to.contain(expectedPmNamespacedIcon);
+            expect(outputXml).to.contain(expectedPmNamespace);
+            expect(outputXml).to.contain(expectedName);
+
+            done(err);
+        });
+    });
+
+    it('Can write a Call Activity with custom icon as pm:customIcon', function(done) {
+
+        const base64EncodedMinimalSvg = 'PHN2Zz48L3N2Zz4=';
+        const withCustomIcon = {
+            name: 'Task',
+            customIcon: base64EncodedMinimalSvg
+        };
+
+        const callActivityWithCustomIcon = moddle.create('bpmn:CallActivity', withCustomIcon);
+
+        const expectedPmNamespace = 'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"';
+        const expectedName = `name="${withCustomIcon.name}"`;
+        const expectedPmNamespacedIcon = `pm:customIcon="${withCustomIcon.customIcon}"`;
+
+        write(callActivityWithCustomIcon, function(err, outputXml) {
+
+            expect(outputXml).to.contain(expectedPmNamespacedIcon);
+            expect(outputXml).to.contain(expectedPmNamespace);
+            expect(outputXml).to.contain(expectedName);
+
+            done(err);
+        });
+    });
+
     it('Write Start Event Interstitial attributes', function(done) {
 
         // given

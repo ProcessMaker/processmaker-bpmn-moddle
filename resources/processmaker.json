@@ -98,6 +98,11 @@
           "type": "String"
         },
         {
+          "name": "customIcon",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "validations",
           "isAttr": true,
           "type": "String"
@@ -304,6 +309,11 @@
         },
         {
           "name": "assignedGroups",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "customIcon",
           "isAttr": true,
           "type": "String"
         }
