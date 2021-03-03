@@ -498,6 +498,28 @@ describe('write', function() {
             });
         });
 
+        it('Write Signal Event Definition', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:SignalEventDefinition', {
+                config: '{}',
+            });
+
+            var expectedXML =
+              '<bpmn:signalEventDefinition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'pm:config="{}" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
+
     });
 
     it('Write Call Activity', function(done) {

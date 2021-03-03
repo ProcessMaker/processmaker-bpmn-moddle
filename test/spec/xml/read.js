@@ -473,6 +473,21 @@ describe('read', function() {
             });
         });
 
+        it('Signal Event Definition', function(done) {
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-signal-event-definition.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:SignalEventDefinition', function(err, element) {
+                // then
+                expect(element).to.jsonEqual({
+                    '$type': 'bpmn:SignalEventDefinition',
+                    config: '{}',
+                });
+                done(err);
+            });
+        });
+
     });
 
 });
