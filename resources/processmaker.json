@@ -269,6 +269,19 @@
       ]
     },
     {
+      "name": "SignalEventDefinition",
+      "extends": [
+        "bpmn:SignalEventDefinition"
+      ],
+      "properties": [
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
       "name": "SequenceFlow",
       "extends": [
         "bpmn:SequenceFlow"
