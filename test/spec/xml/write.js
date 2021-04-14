@@ -172,6 +172,32 @@ describe('write', function() {
             });
         });
 
+        it('Write CallActivity with Interstitial attributes', function(done) {
+
+            // given
+            var fieldElem = moddle.create('bpmn:CallActivity', {
+                'name': 'Task_1',
+                'allowInterstitial': true,
+                'interstitialScreenRef': 'screen-002-000',
+                'config': "{}",
+            });
+
+            var expectedXML =
+              '<bpmn:callActivity xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
+              'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
+              'name="Task_1" pm:allowInterstitial="true" ' +
+              'pm:interstitialScreenRef="screen-002-000" ' +
+              'pm:config="{}" />';
+
+            // when
+            write(fieldElem, function(err, result) {
+
+                // then
+                expect(result).to.eql(expectedXML);
+
+                done(err);
+            });
+        });
 
         it('Write EndEvent', function(done) {
 

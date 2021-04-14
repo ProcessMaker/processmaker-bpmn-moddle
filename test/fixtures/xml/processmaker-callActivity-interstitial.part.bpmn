@@ -1,0 +1,8 @@
+<callActivity xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+      xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd"
+      id="approve"
+      name="Request approval"
+      pm:allowInterstitial="true"
+      pm:interstitialScreenRef="screen-000-000-0001"
+      pm:config="{}"
+/>

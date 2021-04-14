@@ -222,6 +222,26 @@ describe('read', function() {
             });
         });
 
+        it('Load CallActivity Interstitial Configuration', function(done) {
+
+            // given
+            var xml = readFile('test/fixtures/xml/processmaker-callActivity-interstitial.part.bpmn');
+
+            // when
+            moddle.fromXML(xml, 'bpmn:CallActivity', function(err, task) {
+                // then
+                expect(task).to.jsonEqual({
+                    '$type': 'bpmn:CallActivity',
+                    'id': 'approve',
+                    'name': 'Request approval',
+                    'allowInterstitial':true,
+                    'interstitialScreenRef':'screen-000-000-0001',
+                    'config': '{}',
+                });
+                done(err);
+            });
+        });
+
         it('Load End Event', function(done) {
 
             // given
