@@ -5,4 +5,5 @@
       pm:allowedUsers="1,2"
       pm:allowedGroups="10,20"
       pm:whitelist="192.168.1.1/24,*.example.com"
-      pm:validations="1,2,3" />
+      pm:validations="1,2,3"
+      pm:config="{}" />

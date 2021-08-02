@@ -416,6 +416,7 @@ describe('read', function() {
                     allowedGroups: '10,20',
                     whitelist: '192.168.1.1/24,*.example.com',
                     validations: '1,2,3',
+                    config: '{}',
                 });
                 done(err);
             });

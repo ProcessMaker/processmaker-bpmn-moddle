@@ -231,6 +231,11 @@
           "type": "String"
         },
         {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "whitelist",
           "isAttr": true,
           "type": "String"
