@@ -124,6 +124,11 @@
           "name": "scriptVersion",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "errorHandling",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
@@ -135,6 +140,11 @@
       "properties": [
         {
           "name": "implementationVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "errorHandling",
           "isAttr": true,
           "type": "String"
         }
@@ -342,6 +352,11 @@
         },
         {
           "name": "customIcon",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "errorHandling",
           "isAttr": true,
           "type": "String"
         }
