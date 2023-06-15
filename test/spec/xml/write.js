@@ -57,13 +57,14 @@ describe('write', function() {
                 'name': 'ScriptTask_1',
                 'scriptRef': 'screen-001-000',
                 'scriptVersion': '10',
+                'errorHandling': '{"message":"hello"}',
             });
 
             var expectedXML =
               '<bpmn:scriptTask xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' +
               'xmlns:pm="http://processmaker.com/BPMN/2.0/Schema.xsd" ' +
               'name="ScriptTask_1" pm:scriptRef="screen-001-000" ' +
-              'pm:scriptVersion="10" />';
+              'pm:scriptVersion="10" pm:errorHandling="{&#34;message&#34;:&#34;hello&#34;}" />';
 
             // when
             write(fieldElem, function(err, result) {

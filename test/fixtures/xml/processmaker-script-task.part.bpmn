@@ -4,4 +4,5 @@
       name="Script Task"
       pm:scriptRef="script-id"
       pm:scriptVersion="10"
-      pm:config="{}" />
+      pm:config="{}"
+      pm:errorHandling="{}" />

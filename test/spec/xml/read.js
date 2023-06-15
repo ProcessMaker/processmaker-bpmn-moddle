@@ -48,6 +48,7 @@ describe('read', function() {
                     'scriptRef': 'script-id',
                     'scriptVersion': '10',
                     'config': '{}',
+                    'errorHandling': '{}',
                 });
                 done(err);
             });
