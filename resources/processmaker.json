@@ -106,6 +106,16 @@
           "name": "validations",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "elementDestinationType",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "elementDestinationURL",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
