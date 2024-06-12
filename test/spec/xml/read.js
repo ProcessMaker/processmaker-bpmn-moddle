@@ -130,6 +130,8 @@ describe('read', function() {
                     'screenRef': '420f95eb-76d8-459d-b56a-ea605bea4e3f',
                     'screenVersion': '10',
                     'dueIn': 10,
+                    'dueInVariable': '{{variable_mustache}}',
+                    'isDueInVariable': true,
                     'notifyAfterRouting': true,
                     'notifyRequestCreator': false,
                     'startQuantity': 1,
