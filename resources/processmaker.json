@@ -98,6 +98,16 @@
           "type": "String"
         },
         {
+          "name": "configEmail",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "isActionsByEmail",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
           "name": "customIcon",
           "isAttr": true,
           "type": "String"
