@@ -116,6 +116,11 @@
           "name": "validations",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "elementDestination",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
@@ -186,6 +191,11 @@
         },
         {
           "name": "screenVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "elementDestination",
           "isAttr": true,
           "type": "String"
         }
