@@ -53,6 +53,16 @@
           "type": "Integer"
         },
         {
+          "name": "dueInVariable",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "isDueInVariable",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
           "name": "notifyAfterRouting",
           "isAttr": true,
           "type": "Boolean"
