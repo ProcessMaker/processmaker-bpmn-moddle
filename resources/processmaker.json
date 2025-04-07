@@ -409,6 +409,19 @@
           "type": "String"
         }
       ]
+    },
+    {
+      "name": "Gateway",
+      "extends": [
+        "bpmn:Gateway"
+      ],
+      "properties": [
+        {
+          "name": "config",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
     }
   ],
   "emumerations": [ ]
