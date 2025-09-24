@@ -133,7 +133,7 @@
           "type": "String"
         },
         {
-          "name": "conditionalDestination",
+          "name": "conditionalRedirect",
           "isAttr": true,
           "type": "String"
         }
