@@ -131,6 +131,11 @@
           "name": "elementDestination",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "conditionalDestination",
+          "isAttr": true,
+          "type": "String"
         }
       ]
     },
