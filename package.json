@@ -28,7 +28,7 @@
     "async": "^2.6.0",
     "bpmn-moddle": "^5.1.1",
     "chai": "^4.1.2",
-    "eslint": "^4.19.1",
+    "eslint": "^9.36.0",
     "eslint-plugin-bpmn-io": "^0.5.2",
     "esm": "^3.0.15",
     "glob": "^7.1.2",
