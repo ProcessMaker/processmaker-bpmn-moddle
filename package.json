@@ -4,6 +4,7 @@
   "description": "ProcessMaker moddle extensions for BPMN 2.0",
   "scripts": {
     "all": "run-s lint test",
+    "build": "true",
     "lint": "eslint .",
     "dev": "npm test -- --watch",
     "test": "mocha -r esm -r ./test/expect --reporter=spec --recursive test"
@@ -39,5 +40,9 @@
   },
   "dependencies": {
     "min-dash": "^3.0.0"
+  },
+  "processmaker": {
+    "downstream": ["modeler"],
+    "command": "build"
   }
 }
