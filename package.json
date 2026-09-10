@@ -42,7 +42,6 @@
     "min-dash": "^3.0.0"
   },
   "processmaker": {
-    "downstream": ["modeler"],
-    "command": "build"
+    "downstream": ["modeler"]
   }
 }
